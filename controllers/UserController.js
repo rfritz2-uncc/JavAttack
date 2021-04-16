@@ -11,6 +11,6 @@ const register = (req, res) => {
 
 module.exports = {
     login,
-    profile
+    profile,
     register
 }
