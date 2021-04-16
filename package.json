@@ -1,0 +1,30 @@
+{
+  "name": "javattack",
+  "version": "1.0.0",
+  "description": "JavAttack web application for Capstone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfritz2-uncc/JavAttack.git"
+  },
+  "keywords": [
+    "ITSC4155"
+  ],
+  "author": "Group 27",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfritz2-uncc/JavAttack/issues"
+  },
+  "homepage": "https://github.com/rfritz2-uncc/JavAttack#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
