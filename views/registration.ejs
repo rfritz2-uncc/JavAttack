@@ -11,30 +11,29 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="header-title">
         <header>
-            <h1 class="text-center">Register an Account!</h1>
+            <h1 class="text-center" id="headerRegister">Register an Account!</h1>
         </header>
     </div>
 
     <div class="container">
         <main>
-            <p class="text-center">Register your username, email address, and password</p>
-            <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x">
+            <div id="subTitle">
+                <p class="text-center">Register your username, email address, and password</p>
+            </div>
+            <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x" id="registerDiv">
                 <form action="/login">
                     <fieldset>
                         <div class="form-floating">
-                            <label>Username</label>
                             <input type="text" class="form-control" id="floatingInput" placeholder="Username" required>
                             <label for="floatingInput">Username</label>
                         </div>
                         <div class="form-floating">
-                            <label>Email ID</label>>
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating">
-                            <label>Password</label>
                             <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
                             <label for="floatingPassword">Password</label>
                         </div>
@@ -42,7 +41,9 @@
                     </fieldset>
                 </form>
             </div>
-            <a id="loginPage" href="./index.ejs">Login</a>
+            <div id="returnButton">
+                <button onclick="location.href='/'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+            </div>
         </main>
     </div>
 </body>
