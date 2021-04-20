@@ -7,6 +7,7 @@
     background-color: rgb(40, 152, 212);
 }
 
+<<<<<<< HEAD
 h1 { 
    
     color:rgb(40, 152, 212);
@@ -99,3 +100,56 @@ h1 {
   }
 
   
+=======
+#header-title{
+    border-radius: 10px;
+    padding: 1em;
+    margin-bottom:  2em;
+    color: #8bc34a;
+    background-color: #e6e6e6;
+    font-weight: bold;
+}
+
+#login-div{
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    color: #8bc34a;
+}
+#registerDiv{
+    border-radius: 10px;
+    background-color: #e6e6e6;
+    color: #8bc34a;
+}
+
+body{
+    background-color: #00517cff;
+}
+
+form{
+    background-color: #e6e6e6;
+}
+
+.form-floating{
+    padding-top: 5px;
+    border-radius: 10px;
+}
+
+#subTitle{
+    border-radius: 10px;
+    padding: 1em;
+    color: #8bc34a;
+    font-weight: bold;
+}
+#headerRegister{
+    font-weight: bold;
+}
+
+#headerLogin{
+    font-weight: bold;
+}
+
+#returnButton{
+    position: relative;
+    right: 20em;
+}
+>>>>>>> 51f8d65ea83d0b32c35b683ec5ad57250295b776

@@ -11,16 +11,18 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="header-title">
         <header>
-            <h1 class="text-center">JavAttack</h1>
+            <h1 class="text-center" id="headerLogin">JavAttack</h1>
         </header>
     </div>
 
-    <div class="container">
+    <div class="container" >
         <main>
-            <p class="text-center">Welcome to JavAttack!</p>
-            <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x">
+            <div id="subTitle">
+                <p class="text-center">Welcome to JavAttack!</p>
+            </div>
+            <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x" id="login-div">
                 <form action="/login">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
@@ -31,7 +33,11 @@
                         <label for="floatingPassword">Password</label>
                     </div>
                 </form>
-                <button onclick="location.href='/login'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+                <div>
+                    <button onclick="location.href='/login'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+                </div>
+            </div>
+            <div id="returnButton">
                 <button onclick="location.href='/register'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
             </div>
         </main>
