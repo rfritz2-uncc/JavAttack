@@ -4,7 +4,7 @@
 
 :root {
     margin: 50px;
-    background-color: rgb(40, 152, 212);
+    background-color: #00517cff;
 }
 
 #header-title{
@@ -58,6 +58,7 @@ form{
     position: relative;
     right: 20em;
 }
+
  /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
  .row.content {height: 1500px}
     
@@ -82,3 +83,4 @@ form{
    }
    .row.content {height: auto;} 
  }
+
