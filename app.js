@@ -26,6 +26,7 @@ app.use('/assets', express.static('assets'));
 
 // Setup paths to routes
 app.use('/', index);
+app.use('/login', index);
 app.use('/home', home);
 app.use('/profile', profile);
 app.use('/play', game);
