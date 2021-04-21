@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const UserController = require('../controllers/UserController.js');
 
 router.get('/', function(req, res) {
     res.render('home');
+});
+
+router.get('/tutorial', function(req, res) {
+  res.render('tutorial');
 });
 
 module.exports = router;

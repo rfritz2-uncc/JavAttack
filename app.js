@@ -1,21 +1,15 @@
+// Imports
 const express = require('express');
 const app = express();
 const index = require('./routes/index.js');
 const home = require('./routes/home.js')
 const profile = require('./routes/profile.js')
+const game = require('./routes/game.js')
 
-app.set('view engine', 'ejs'); 
-app.use('/assets', express.static('assets'));
-
-app.use('/', index);
-app.use("/home", home)
-app.use('/profile', profile)
-
-app.listen(3000);
-
-var firebase = require('firebase/app');
-require('firebase/auth');
-var firebaseConfig = {
+// Firebase initialization
+const firebase = require('firebase/app');
+const fbAuth = require('firebase/auth');
+const firebaseConfig = {
     apiKey: "AIzaSyBOYNfxWFWkuk1JPCRxbpoeydtuP41XL9U",
     authDomain: "javattack-abe7d.firebaseapp.com",
      projectId: "javattack-abe7d",
@@ -25,3 +19,15 @@ var firebaseConfig = {
     measurementId: "G-JB3Q6WWXL5"
 };
 firebase.initializeApp(firebaseConfig);
+
+// Express setup
+app.set('view engine', 'ejs'); 
+app.use('/assets', express.static('assets'));
+
+// Setup paths to routes
+app.use('/', index);
+app.use('/home', home);
+app.use('/profile', profile);
+app.use('/play', game);
+
+app.listen(3000);
