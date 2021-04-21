@@ -22,21 +22,27 @@
             <div id="subTitle">
                 <p class="text-center">Welcome to JavAttack!</p>
             </div>
+
+            <!-- Login form -->
             <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x" id="login-div">
-                <form action="/login">
+                <form action="/login" method="post">
+                    <!-- Username -->
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
+                        <input type="text" class="form-control" id="floatingInput" name="username" value="<%= login.username %>">
+                        <label for="floatingInput">Username</label>
                     </div>
+                    <!-- Password -->
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="floatingPassword" name="password" value="<%= login.password %>">
                         <label for="floatingPassword">Password</label>
                     </div>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+                    </div>
                 </form>
-                <div>
-                    <button onclick="location.href='/login'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
-                </div>
             </div>
+
+            <!-- Registration button -->
             <div id="returnButton">
                 <button onclick="location.href='/register'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
             </div>

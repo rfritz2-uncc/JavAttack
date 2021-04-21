@@ -80,3 +80,11 @@ form{
    .row.content {height: auto;} 
  }
 
+ #centerFix{
+    border: dotted;
+    display: table-row;
+    position: fixed;
+    left: 45%;
+    right: 45%;
+    justify-content: center;
+ }
