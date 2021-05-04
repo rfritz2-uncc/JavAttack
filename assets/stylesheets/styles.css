@@ -83,8 +83,15 @@ form{
  #centerFix{
     border: dotted;
     display: table-row;
-    position: fixed;
-    left: 45%;
-    right: 45%;
+    position: absolute;
+    max-width: 400px;
+    margin-left: 44%;
+    margin-right: 44%;
+    text-align: center;
     justify-content: center;
  }
+  .container-buttons{
+    padding: 20px;
+    text-align: center;
+    max-width: 100px;
+}
