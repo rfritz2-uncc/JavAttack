@@ -1,40 +1,49 @@
-const express = require('express');
 const csrf = require('csurf');
 const bodyparser = require('body-parser');
 const cookieparser = require('cookie-parser');
+const express = require('express');
+const bodyParser = require('body-parser');
+const UserController = require('./controllers/UserController.js');
 
+// Firebase Admin SDK configuration
+const admin = require('firebase-admin');
+
+const serviceAccount = require('./serviceAccountKey.json');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://javattack-abe7d-default-rtdb.firebaseio.com"
+})
+
+const csrfMiddleware = csrf({ cookie: true });
+
+// Express setup
 const app = express();
-
 const index = require('./routes/index.js');
 const home = require('./routes/home.js')
 const profile = require('./routes/profile.js')
 const game = require('./routes/game.js')
 const forum = require('./routes/forum.js')
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-// Firebase initialization
-const firebase = require('firebase/app');
-const fbAuth = require('firebase/auth');
-const firebaseConfig = {
-    apiKey: "AIzaSyBOYNfxWFWkuk1JPCRxbpoeydtuP41XL9U",
-    authDomain: "javattack-abe7d.firebaseapp.com",
-     projectId: "javattack-abe7d",
-    storageBucket: "javattack-abe7d.appspot.com",
-    messagingSenderId: "663006084713",
-    appId: "1:663006084713:web:43bbe0cce21b3a3cdfacf8",
-    measurementId: "G-JB3Q6WWXL5"
-};
-firebase.initializeApp(firebaseConfig);
-
-// Express setup
 app.set('view engine', 'ejs'); 
 app.use('/assets', express.static('assets'));
 
+// Firebase setup
 app.use(bodyparser.json());
 app.use(cookieparser());
+app.use(csrfMiddleware);
+
+app.all('*', (req, res, next) => {
+    res.cookie('XSRF-TOKEN', req.csrfToken());
+    next();
+});
 
 // Setup paths to routes
 app.use('/', index);
 app.use('/login', index);
+// app.use('/login', urlencodedParser, UserController.login);
+// app.use('/sessionLogout', urlencodedParser, UserController.login)
 app.use('/home', home);
 app.use('/profile', profile);
 app.use('/play', game);
