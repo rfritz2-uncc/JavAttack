@@ -5,6 +5,7 @@ const index = require('./routes/index.js');
 const home = require('./routes/home.js')
 const profile = require('./routes/profile.js')
 const game = require('./routes/game.js')
+const forum = require('./routes/forum.js')
 
 // Firebase initialization
 const firebase = require('firebase/app');
@@ -30,5 +31,6 @@ app.use('/login', index);
 app.use('/home', home);
 app.use('/profile', profile);
 app.use('/play', game);
+app.use('/forum', forum)
 
 app.listen(3000);
