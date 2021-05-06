@@ -1,8 +1,8 @@
-// Imports
 const express = require('express');
-// const csrf = require('csrf');
+const csrf = require('csurf');
 const bodyparser = require('body-parser');
-const cookieparser = require('cookie-parser')
+const cookieparser = require('cookie-parser');
+
 const app = express();
 
 const index = require('./routes/index.js');
@@ -28,6 +28,9 @@ firebase.initializeApp(firebaseConfig);
 // Express setup
 app.set('view engine', 'ejs'); 
 app.use('/assets', express.static('assets'));
+
+app.use(bodyparser.json());
+app.use(cookieparser());
 
 // Setup paths to routes
 app.use('/', index);
