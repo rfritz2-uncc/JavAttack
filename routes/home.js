@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/UserController.js');
+const firebase = require('firebase');
 const admin = require('firebase-admin');
 
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
   const sessionCookie = req.cookies.session || "";
   admin
     .auth()
@@ -16,17 +17,17 @@ router.get('/', function(req, res) {
     });
 });
 
-router.get('/tutorial', function(req, res) {
+router.get('/tutorial', function (req, res) {
   res.render('tutorial');
 });
 
 module.exports = router;
 
 function myFunction() {
-    var x = document.getElementById("myNavbar");
-    if (x.className === "navbar") {
-      x.className += " responsive";
-    } else {
-      x.className = "navbar";
-    }
+  var x = document.getElementById("myNavbar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
   }
+}

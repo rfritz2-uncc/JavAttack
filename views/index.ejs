@@ -53,10 +53,11 @@
             <!-- Firebase scripts -->
             <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js" defer></script>
             <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js" defer></script>
-            <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer ></script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
 
             <script>
                 window.addEventListener("DOMContentLoaded", () => {
+
                     var firebaseConfig = {
                         apiKey: "AIzaSyBOYNfxWFWkuk1JPCRxbpoeydtuP41XL9U",
                         authDomain: "javattack-abe7d.firebaseapp.com",
@@ -69,7 +70,7 @@
                     // Initialize Firebase
                     firebase.initializeApp(firebaseConfig);
                     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
-
+                    
                     document
                         .getElementById("login")
                         .addEventListener("submit", (event) => {
