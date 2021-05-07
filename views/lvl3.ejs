@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/../assets/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <title>JavAttack</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+        <header>
+            <h1 class="text-center">JavAttack</h1>
+            <%- include ('partials/nav.ejs') -%>
+        </header>
+    </div>
+    <h1>Questions for level 1!</h1>
+
+    <h2>1. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>2. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>3. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>4. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>5. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>6. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>7. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>8. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>9. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+    <h2>10. </h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p></p>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapse");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+</body>
+    
+</html>
