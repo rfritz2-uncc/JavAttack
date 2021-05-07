@@ -1,6 +1,13 @@
 const admin = require('firebase-admin');
 
 const login = (req, res) => {
+    var db = admin.database();
+    var ref = db.ref();
+    ref.on("value", function(snapshot) {
+        console.log(snapshot.val());
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
     const idToken = req.body.idToken.toString();
     // session cookie lives for five days
     const expiresIn = 60 * 60 * 24 * 5 * 1000;
