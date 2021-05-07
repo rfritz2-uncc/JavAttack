@@ -15,8 +15,12 @@ router.get('/sessionLogout', (req, res) => {
     console.log('session logout');
     res.clearCookie('session');
     res.redirect('/');
-})
+});
 
 router.get('/register', UserController.register);
+
+router.get('/shop', (req, res) => {
+    res.render("ingame_shop");
+})
 
 module.exports = router;
