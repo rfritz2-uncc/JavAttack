@@ -42,13 +42,12 @@ const profile = (req, res) => {
             var ref = db.ref('users/'+uid);
             var userInfo;
             ref.on("value", function (snapshot) {
-                console.log(snapshot.val());
+                // console.log(snapshot.val());
                 userInfo = snapshot.val();
             }, function (errorObject) {
                 console.log("The read failed: " + errorObject.code);
             });
-            res.cookie('userProfile', userInfo);
-            res.render('profile');
+            res.render('profile', { birthday: userInfo.birthday, email: userInfo.email, levels: userInfo.levels, name: userInfo.name, points: userInfo.points, rank: userInfo.rank, role: userInfo.role  });
         })
         .catch((error) => {
             res.redirect('/');
