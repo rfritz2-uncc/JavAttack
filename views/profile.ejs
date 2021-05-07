@@ -157,70 +157,84 @@
 </head>
 
 <body>
-    <section class="section about-section gray-bg" id="about">
-      <div class="container">
-        <%- include ('partials/nav.ejs') -%>
-          <div class="row align-items-center flex-row-reverse">
-            <div class="col-lg-6">
-              <div class="about-text go-to">
-                <h3 class="dark-color"><%= name %></h3>
-                <h6 class="theme-color lead">User Profile</h6>
-                <div class="row about-list">
-                  <div class="col-md-6">
-                    <div class="media">
-                      <label>Birthday</label>
-                      <p><%= birthday %></p>
-                    </div>
-                    <div class="media">
-                      <label>E-mail</label>
-                      <p><%= email %></p>
-                    </div>
+  <section class="section about-section gray-bg" id="about">
+    <div class="container">
+      <%- include ('partials/nav.ejs') -%>
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-lg-6">
+            <div class="about-text go-to">
+              <h3 class="dark-color">
+                <%= name %>
+              </h3>
+              <h6 class="theme-color lead">User Profile</h6>
+              <div class="row about-list">
+                <div class="col-md-6">
+                  <div class="media">
+                    <label>Birthday</label>
+                    <p>
+                      <%= birthday %>
+                    </p>
                   </div>
-                  <div class="col-md-6">
-                    <div class="media">
-                      <label>Role</label>
-                      <p><%= role %></p>
-                    </div>
+                  <div class="media">
+                    <label>E-mail</label>
+                    <p>
+                      <%= email %>
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="about-avatar">
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="counter">
-            <div class="row">
-              <div class="col-6 col-lg-3">
-                <div class="count-data text-center">
-                  <h6 class="count h2" data-to="500" data-speed="500"><%= points %></h6>
-                  <p class="m-0px font-w-600">Total Points</p>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3">
-                <div class="count-data text-center">
-                  <h6 class="count h2" data-to="150" data-speed="150"><%= rank %></h6>
-                  <p class="m-0px font-w-600">Leaderboard Rank</p>
-                </div>
-              </div>
-              <div class="col-6 col-lg-3">
-                <div class="count-data text-center">
-                  <h6 class="count h2" data-to="850" data-speed="850"><%= levels %></h6>
-                  <p class="m-0px font-w-600">Levels Complete</p>
+                <div class="col-md-6">
+                  <div class="media">
+                    <label>Role</label>
+                    <p>
+                      <%= role %>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-      </div>
-      </div>
-    </section>
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+          <div class="col-lg-6">
+            <div class="about-avatar">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="counter">
+          <div class="row">
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="500" data-speed="500">
+                  <%= points %>
+                </h6>
+                <p class="m-0px font-w-600">Total Points</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="150" data-speed="150">
+                  <%= rank %>
+                </h6>
+                <p class="m-0px font-w-600">Leaderboard Rank</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="count-data text-center">
+                <h6 class="count h2" data-to="850" data-speed="850">
+                  <%= levels %>
+                </h6>
+                <p class="m-0px font-w-600">Levels Complete</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </section>
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
 
-    </script>
+  </script>
 
 
 </body>

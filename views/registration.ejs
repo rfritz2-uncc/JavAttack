@@ -23,30 +23,96 @@
             <div id="subTitle">
                 <p class="text-center">Register your account!</p>
             </div>
+
             <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x" id="registerDiv">
-                <form action="/login">
-                    <fieldset>
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                            <label for="floatingInput">Email address</label>
-                        </div>
-                        <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                            <label for="floatingPassword">Password</label>
-                        </div>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="Confirm Password" required>
-                            <label for="floatingInput">Confirm Password</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
-                    </fieldset>
+                <form id="register">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="name"
+                            required>
+                        <label for="floatingInput">Name</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            name="email" required>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                            name="password" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingInput" placeholder="Confirm Password"
+                            name="passConfirm" required>
+                        <label for="floatingInput">Confirm Password</label>
+                    </div>
+                    <div>
+                        <button
+                            class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
+                    </div>
                 </form>
             </div>
+
             <div id="returnButton">
-                <button onclick="location.href='/'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+                <button onclick="location.href='/'"
+                    class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
             </div>
+
+            <!-- Firebase scripts -->
+            <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js" defer></script>
+            <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+                    console.log('HECK');
+
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyBOYNfxWFWkuk1JPCRxbpoeydtuP41XL9U",
+                        authDomain: "javattack-abe7d.firebaseapp.com",
+                        projectId: "javattack-abe7d",
+                        storageBucket: "javattack-abe7d.appspot.com",
+                        messagingSenderId: "663006084713",
+                        appId: "1:663006084713:web:43bbe0cce21b3a3cdfacf8",
+                        measurementId: "G-JB3Q6WWXL5"
+                    };
+
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    // firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+
+                    document
+                        .getElementById("register")
+                        .addEventListener("submit", (event) => {
+                            event.preventDefault();
+                            const name = event.target.name.value;
+                            const email = event.target.email.value;
+                            const password = event.target.password.value;
+                            const passConfirm = event.target.passConfirm.value;
+                            console.log('Working');
+
+                            firebase
+                                .auth()
+                                .createUser({
+                                    email: email,
+                                    password: passConfirm,
+                                    displayName: name,
+                                    disabled: false,
+                                })
+                                .then((userRecord) => {
+                                    // See the UserRecord reference doc for the contents of userRecord.
+                                    console.log('Successfully created new user:', userRecord.uid);
+                                })
+                                .catch((error) => {
+                                    console.log('Error creating new user:', error);
+                                });
+                        });
+                });
+            </script>
         </main>
     </div>
+
+
 </body>
 
 </html>
