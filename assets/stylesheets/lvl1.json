@@ -1,20 +1,17 @@
 {
     "lvl1" :[
         {
-            "question": "Finish the declaration for the main method: ",
-            "snippet": "public static ____ main(String [] args)",
+            "question": "Finish the declaration for the main method: public static ____ main(String [] args)",
             "answer": "void",
             "id": 1   
         },
         {
-            "question": "Finish the code to print out the message on a new line: ",
-            "snippet": "System.out._______('Hello World')",
+            "question": "Finish the code to print out the message on a new line: System.out._______('Hello World')",
             "answer": "println",
             "id": 2   
         },
         {
-            "question": "What is the parameter for this code?",
-            "snippet": "public string garden(peach){",
+            "question": "What is the parameter for this code? public string garden(peach){",
             "answer": "peach",
             "id": 3   
         },
@@ -47,8 +44,7 @@
             "answer": "int [] id",
             "id": 9   
         },{
-            "question": "Finish the code to print out the message on the same line ",
-            "snippet": "System.out._______('Hello World')",
+            "question": "Finish the code to print out the message on the same line: System.out._______('Hello World')",
             "answer": "print",
             "id": 10   
         }

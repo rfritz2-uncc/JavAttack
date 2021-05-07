@@ -1,0 +1,54 @@
+{
+    "lvl6": [
+        {
+            "question": "Finish the declaration for the main method: public static ____ main(String [] args)",
+            "answer": "void",
+            "id": 1   
+        },
+        {
+            "question": "Finish the code to print out the message on a new line: System.out._______('Hello World')",
+            "answer": "println",
+            "id": 2   
+        },
+        {
+            "question": "What kind of loop iterates or repeates while a condition is stays true",
+            "answer": "while",
+            "id": 3   
+        },
+        {
+            "question": "What kind of loop iterates or repeates and performs at least once while a condition stays true?",
+            "answer": "do-while",
+            "id": 4   
+        },
+        {
+            "question": "Fill in the blank for taking in a float as an input: scan._________();",
+            "answer": "nextFloat",
+            "id": 5   
+        },
+        {
+            "question": "Fill in the blank for the import of the scanner class: import java.util._______; ",
+            "answer": "Scanner",
+            "id": 6   
+        },
+        {
+            "question":"What is the size(bytes) of the data type 'double' in Java?" ,
+            "answer": "8",
+            "id" :7
+        },
+        {
+            "question":"What is the size(bytes) of the data type 'char' in Java?" ,
+            "answer": "2",
+            "id" :8
+        },
+        {
+            "question":"State True or False. Every IF statement must be followed by an ELSE of ELSE-IF statement." ,
+            "answer": "false",
+            "id" :9
+        },
+        {
+            "question":"State True or False. A Single-Line comment or Multiline-comment is allowed in between if () and Left Brace ( { )." ,
+            "answer": "true",
+            "id" :10
+        }
+    ]
+}

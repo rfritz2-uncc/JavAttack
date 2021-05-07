@@ -1,0 +1,54 @@
+{
+    "lvl2" :[
+        {
+            "question": "What do you type to start a new line in a string?",
+            "answer": "\n",
+            "id": 1   
+        },
+        {
+            "question": "What kind of loop iterates or repeats a set amount of times?",
+            "answer": "if",
+            "id": 2   
+        },
+        {
+            "question": "What kind of loop iterates or repeates while a condition is stays true",
+            "answer": "while",
+            "id": 3   
+        },
+        {
+            "question": "What kind of loop iterates or repeates and performs at least once while a condition stays true?",
+            "answer": "do-while",
+            "id": 4   
+        },
+        {
+            "question": "What do you type to tab in the middle of a string",
+            "answer": "\t",
+            "id": 5   
+        },
+        {
+            "question": "Which variable uses whole numbers?",
+            "answer": "int",
+            "id": 6   
+        },
+        {
+            "question": "Which variable allows uses of  decimal numbers?",
+            "answer": "float",
+            "id": 7   
+        },
+        {
+            "question": "Which variable allows a single character? ",
+            "answer": "char",
+            "id": 8   
+        },
+        {
+            "question": "Fill in the blank: for(x = 0; x < 10; ___)",
+            "answer": "x++",
+            "id": 9   
+        },
+        {
+            "question": "fill in the blank for the loop to iterate 12 times: for(i = 0; i < __; i++)",
+            "answer": "12",
+            "id": 10   
+        }
+    ]
+}
