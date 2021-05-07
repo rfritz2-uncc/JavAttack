@@ -42,8 +42,6 @@ app.all('*', (req, res, next) => {
 // Setup paths to routes
 app.use('/', index);
 app.use('/login', index);
-// app.use('/login', urlencodedParser, UserController.login);
-// app.use('/sessionLogout', urlencodedParser, UserController.login)
 app.use('/home', home);
 app.use('/profile', profile);
 app.use('/play', game);

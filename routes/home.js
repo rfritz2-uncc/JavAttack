@@ -12,7 +12,6 @@ router.get('/', function(req, res) {
       res.render('home');
     })
     .catch((error) => {
-      console.log('home.js || ' + error);
       res.redirect('/');
     });
 });

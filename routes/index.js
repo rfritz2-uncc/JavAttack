@@ -12,6 +12,7 @@ router.get('/', function (req, res) {
 router.post('/sessionLogin', urlencodedParser, UserController.login);
 
 router.get('/sessionLogout', (req, res) => {
+    console.log('session logout');
     res.clearCookie('session');
     res.redirect('/');
 })
