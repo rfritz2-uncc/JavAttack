@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/../assets/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <title>JavAttack</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+        <header>
+            <h1 class="text-center">JavAttack</h1>
+            <%- include ('partials/nav.ejs') -%>
+        </header>
+    </div>
+    <h1>Questions for level 1!</h1>
+
+    <h2>1. What do you type to start a new line in a string?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>\n</p>
+    </div>
+    <h2>2. What kind of loop iterates or repeats a set amount of times?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>if</p>
+    </div>
+    <h2>3. What kind of loop iterates or repeates while a condition is stays true</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>while</p>
+    </div>
+    <h2>4. What kind of loop iterates or repeates and performs at least once while a condition stays true?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>do-while</p>
+    </div>
+    <h2>5. What do you type to tab in the middle of a string</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>\t</p>
+    </div>
+    <h2>6. Which variable uses whole numbers?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>int</p>
+    </div>
+    <h2>7. Which variable allows uses of  decimal numbers?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>float</p>
+    </div>
+    <h2>8. Which variable allows a single character?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>char</p>
+    </div>
+    <h2>9. Fill in the blank: for(x = 0; x < 10; ___)</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>x++</p>
+    </div>
+    <h2>10. Fill in the blank for the loop to iterate 12 times: for(i = 0; i < __; i++)</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>12</p>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapse");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+</body>
+    
+</html>

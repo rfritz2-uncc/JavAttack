@@ -1,0 +1,50 @@
+[
+    {
+        "question": "Finish the declaration for the main method: public static ____ main(String [] args)",
+        "answer": "void",
+        "id": 1   
+    },
+    {
+        "question": "Finish the code to print out the message on a new line: System.out._______('Hello World')",
+        "answer": "println",
+        "id": 2   
+    },
+    {
+        "question": "What is the parameter for this code? public string garden(peach){",
+        "answer": "peach",
+        "id": 3   
+    },
+    {
+        "question": "Declare a character variable with the name letter",
+        "answer": "char letter",
+        "id": 4   
+    },
+    {
+        "question": "Declare a float variable with the name peanut",
+        "answer": "float peanut",
+        "id": 5   
+    },
+    {
+        "question": "What kind of variable allows a lot of characters?",
+        "answer": "string",
+        "id": 6   
+    },
+    {
+        "question": "Declare a string variable named sentence",
+        "answer": "String sentence",
+        "id": 7   
+    },
+    {
+        "question": "Declare a class named House",
+        "answer": "Class House",
+        "id": 8   
+    },{
+        "question": "Declare an array of integers named id",
+        "answer": "int [] id",
+        "id": 9   
+    },{
+        "question": "Finish the code to print out the message on the same line: System.out._______('Hello World')",
+        "answer": "print",
+        "id": 10   
+    }
+]

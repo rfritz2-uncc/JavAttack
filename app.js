@@ -41,6 +41,7 @@ const forum = require('./routes/forum.js')
 app.set('view engine', 'ejs');
 app.use('/assets', express.static('assets'));
 
+
 // Firebase setup
 app.use(bodyparser.json());
 app.use(cookieparser());

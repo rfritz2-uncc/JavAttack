@@ -78,3 +78,25 @@ form{
    }
    .row.content {height: auto;} 
  }
+ .collapse{
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    max-width: 150px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+
+ }
+ .active, .collapsible:hover {
+    background-color: #555;
+  }
+ .collapseContent{
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    max-width: 150px;
+ }

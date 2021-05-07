@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/../assets/stylesheets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <title>JavAttack</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+        <header>
+            <h1 class="text-center">JavAttack</h1>
+            <%- include ('partials/nav.ejs') -%>
+        </header>
+    </div>
+    <h1>Questions for level 1!</h1>
+
+    <h2>1. Which of the following is NOT a primitive data type: int, boolean,float, double, Array</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>Array</p>
+    </div>
+    <h2>2. What is the range of data type 'short' in Java: A: -2344556, B: -32768:32767, C:-128:127, D: None of the above</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>-32768:32767</p>
+    </div>
+    <h2>3. What is the range of data type 'byte' in Java: A: -2499399:2499400, B: -128:127, C: -32768:32767, D: None of the above</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>-128:127</p>
+    </div>
+    <h2>4. An expression involving byte, int, and literal numbers is promoted to which of these: A: int, B: long, C: float, D: boolean</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>int</p>
+    </div>
+    <h2>5. Which data type value is returned by all transcendental math functions</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>double</p>
+    </div>
+    <h2>6. What is the size(bytes) of the data type 'float' in Java?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>4</p>
+    </div>
+    <h2>7. "What is the size(bytes) of the data type 'double' in Java?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>8</p>
+    </div>
+    <h2>8. What is the size(bytes) of the data type 'char' in Java?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>2</p>
+    </div>
+    <h2>9. What is the size(bytes) of the data type 'int' in Java?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>4</p>
+    </div>
+    <h2>10. The following number is an example of what primitive data type: 254.4f ?</h2>
+    <button class="collapse">Show answer!</button>
+    <div class="collapseContent">
+        <p>float</p>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapse");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+</body>
+    
+</html>
