@@ -21,7 +21,16 @@ const login = (req, res) => {
 }
 
 const profile = (req, res) => {
-    res.render('profile');
+    const sessionCookie = req.cookies.session || "";
+    admin
+      .auth()
+      .verifySessionCookie(sessionCookie, true)
+      .then(() => {
+        res.render('profile');
+      })
+      .catch((error) => {
+        res.redirect('/');
+      });
 }
 
 const register = (req, res) => {
@@ -29,7 +38,16 @@ const register = (req, res) => {
 }
 
 const play = (req, res) => {
-    res.render('level_page');
+    const sessionCookie = req.cookies.session || "";
+    admin
+      .auth()
+      .verifySessionCookie(sessionCookie, true)
+      .then(() => {
+        res.render('level_page');
+      })
+      .catch((error) => {
+        res.redirect('/');
+      });
 }
 
 module.exports = {
