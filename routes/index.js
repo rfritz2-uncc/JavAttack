@@ -20,7 +20,11 @@ router.get('/sessionLogout', (req, res) => {
 router.get('/register', UserController.register);
 
 router.get('/shop', (req, res) => {
-    res.render("ingame_shop");
+    res.render('ingame_shop');
+})
+
+router.get('/leaderboard', (req, res) => {
+    res.render('leaderboard');
 })
 
 module.exports = router;

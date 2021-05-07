@@ -58,6 +58,7 @@ app.use('/home', home);
 app.use('/play', game);
 app.use('/profile', profile);
 app.use('/shop', index);
+app.use('/leaderboard', index);
 app.use('/forum', forum)
 
 app.listen(3000);
