@@ -1,0 +1,55 @@
+{
+    "lvl5" :[
+        {
+            
+            "question":"Fill in the blank: In an if-statement, the if part executes its statement(s) if the expression is _____" ,
+            "answer": "true",
+            "id" :1
+        },
+        {
+            "question":"Fill in the blank: In an if-statement, the else part executes its statement(s) if the expression is _____" ,
+            "answer": "false",
+            "id" :2
+        },
+        {
+            "question":"Fill in the blank: _____ statement  is used to skip out of switch structure." ,
+            "answer": "break",
+            "id" :3
+        },
+        {
+            "question":"Fill in the blank: Repetitive statements in programming are called ______" ,
+            "answer": "iteration",
+            "id" :4
+        },
+        {
+            "question": "Fill in the blank: The _____ Part of the loop is to test whether a boolean expression evaluates to true or false." ,
+            "answer": "condition",
+            "id" :5
+        },
+        {
+            "question":"Fill in the blank:  _____ structure is an efficient way of writing multiple if statements that contains only equality conditions of integral values." ,
+            "answer": "switch",
+            "id" :6
+        },
+        {
+            "question":"Fill in the blank: While if statement checks only for the condition that evaluates true,___/___ structure checks for both truth and falsity of a condition." ,
+            "answer": "if/else",
+            "id" :7
+        },
+        {
+            "question":"Fill in the blank: The ______ structure in Java consists of series of case keyword.",   
+            "answer": "switch",
+            "id" :8
+        },
+        {
+            "question":"State True or False. Every IF statement must be followed by an ELSE of ELSE-IF statement." ,
+            "answer": "false",
+            "id" :9
+        },
+        {
+            "question":"State True or False. A Single-Line comment or Multiline-comment is allowed in between if () and Left Brace ( { )." ,
+            "answer": "true",
+            "id" :10
+        }
+    ]
+}
