@@ -9,7 +9,12 @@ router.get('/', function (req, res) {
     res.render('index', { login: req.query });
 });
 
-router.post('/', urlencodedParser, UserController.login);
+router.post('/sessionLogin', urlencodedParser, UserController.login);
+
+router.get('/sessionLogout', (req, res) => {
+    res.clearCookie('session');
+    res.redirect('/');
+})
 
 router.get('/register', UserController.register);
 

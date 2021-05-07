@@ -18,7 +18,7 @@
         </header>
     </div>
 
-    <div class="container" >
+    <div class="container">
         <main>
             <div id="subTitle">
                 <p class="text-center">Welcome to JavAttack!</p>
@@ -26,27 +26,83 @@
 
             <!-- Login form -->
             <div class="w-75 p-3 position-relative top-0 start-50 translate-middle-x" id="login-div">
-                <form action="/login" method="post">
+                <form id="login">
                     <!-- Username -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingInput" name="username" value="<%= login.username %>">
-                        <label for="floatingInput">Username</label>
+                        <input type="text" class="form-control" id="floatingInput" name="login">
+                        <label for="floatingInput">Email</label>
                     </div>
                     <!-- Password -->
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" name="password" value="<%= login.password %>">
+                        <input type="password" class="form-control" id="floatingPassword" name="password">
                         <label for="floatingPassword">Password</label>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
+                        <button
+                            class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Login</button>
                     </div>
                 </form>
             </div>
 
             <!-- Registration button -->
             <div id="returnButton">
-                <button onclick="location.href='/register'" class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
+                <button onclick="location.href='/register'"
+                    class="btn btn-primary btn-sm position-relative top-0 start-50 translate-middle-x">Register</button>
             </div>
+
+            <!-- Firebase scripts -->
+            <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js" defer></script>
+            <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer ></script>
+
+            <script>
+                window.addEventListener("DOMContentLoaded", () => {
+                    var firebaseConfig = {
+                        apiKey: "AIzaSyBOYNfxWFWkuk1JPCRxbpoeydtuP41XL9U",
+                        authDomain: "javattack-abe7d.firebaseapp.com",
+                        projectId: "javattack-abe7d",
+                        storageBucket: "javattack-abe7d.appspot.com",
+                        messagingSenderId: "663006084713",
+                        appId: "1:663006084713:web:43bbe0cce21b3a3cdfacf8",
+                        measurementId: "G-JB3Q6WWXL5"
+                    };
+                    // Initialize Firebase
+                    firebase.initializeApp(firebaseConfig);
+                    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+
+                    document
+                        .getElementById("login")
+                        .addEventListener("submit", (event) => {
+                            event.preventDefault();
+                            const login = event.target.login.value;
+                            const password = event.target.password.value;
+
+                            firebase
+                                .auth()
+                                .signInWithEmailAndPassword(login, password)
+                                .then(({ user }) => {
+                                    return user.getIdToken().then((idToken) => {
+                                        return fetch("/sessionLogin", {
+                                            method: "POST",
+                                            headers: {
+                                                Accept: "application/json",
+                                                "Content-Type": "application/json",
+                                                "CSRF-Token": Cookies.get("XSRF-TOKEN")
+                                            },
+                                            body: JSON.stringify({ idToken }),
+                                        });
+                                    });
+                                })
+                                .then(() => {
+                                    return firebase.auth().signOut();
+                                })
+                                .then(() => {
+                                    window.location.assign("/home");
+                                });
+                            return false;
+                        });
+                })
+            </script>
         </main>
     </div>
 </body>

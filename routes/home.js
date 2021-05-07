@@ -1,9 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/UserController.js');
+const admin = require('firebase-admin');
 
 router.get('/', function(req, res) {
-    res.render('home');
+  const sessionCookie = req.cookies.session || "";
+  admin
+    .auth()
+    .verifySessionCookie(sessionCookie, true)
+    .then(() => {
+      res.render('home');
+    })
+    .catch((error) => {
+      console.log('home.js || ' + error);
+      res.redirect('/');
+    });
 });
 
 router.get('/tutorial', function(req, res) {

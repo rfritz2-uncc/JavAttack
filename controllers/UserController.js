@@ -1,16 +1,23 @@
-const utilityFunctions = require('../models/utilityFunctions.js');
+const admin = require('firebase-admin');
 
 const login = (req, res) => {
-    console.log(req.body);
-    // TEMPORARY authenitcation with hardcoded database
-    var users = utilityFunctions.getConnections();
-    for (var i = 0; i < users.length; i++) {
-        if (req.body.username === users[i].username && req.body.password === users[i].password) {
-            res.redirect('/home');
-        } else {
-            res.redirect('/');
-        }
-    }
+    const idToken = req.body.idToken.toString();
+    // session cookie lives for five days
+    const expiresIn = 60 * 60 * 24 * 5 * 1000;
+    admin
+        .auth()
+        .createSessionCookie(idToken, { expiresIn })
+        .then(
+            (sessionCookie) => {
+                const options = { maxAge: expiresIn, httpOnly: true };
+                res.cookie('session', sessionCookie, options);
+                res.end(JSON.stringify({ status: 'success' }));
+            },
+            (error) => {
+                console.log('UserController error');
+                res.status(401).send('UNAUTHORIZED REQUEST');
+            }
+        );
 }
 
 const profile = (req, res) => {
